@@ -1,0 +1,193 @@
+/* Apple × Tesla: presentation only. Existing geometry, placement and breakpoints live in style.css. */
+:root {
+  --ui-font: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'General Sans', sans-serif;
+  --ui-ink: #1d1d1f;
+  --ui-secondary: #6e6e73;
+  --ui-tertiary: #929297;
+  --ui-surface: #f5f5f7;
+  --ui-card: #ffffff;
+  --ui-line: rgba(60,60,67,.12);
+  --ui-glass: rgba(246,246,248,.76);
+  --ui-edge: rgba(255,255,255,.76);
+  --ui-ease: cubic-bezier(.2,.75,.25,1);
+  --ui-shadow: 0 8px 28px rgba(0,0,0,.08), 0 1px 3px rgba(0,0,0,.04);
+  --line: var(--ui-line);
+  --blue: #1d1d1f;
+  color: var(--ui-ink);
+  font-family: var(--ui-font);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-synthesis: none;
+}
+button,input,summary,audio { font-family:var(--ui-font); }
+button {
+  color:var(--ui-ink);
+  font-weight:500;
+  letter-spacing:-.12px;
+  text-shadow:none;
+  transition:background-color 180ms var(--ui-ease),color 180ms var(--ui-ease),box-shadow 220ms var(--ui-ease),transform 220ms var(--ui-ease),opacity 180ms var(--ui-ease);
+}
+button:not(.swatch):hover {
+  background-color:rgba(255,255,255,.82);
+  color:var(--ui-ink);
+  box-shadow:0 2px 8px rgba(0,0,0,.06),inset 0 0 0 1px rgba(255,255,255,.55);
+}
+button:focus-visible,a:focus-visible,summary:focus-visible {
+  outline:2px solid #8c8c91;
+  outline-offset:3px;
+}
+button:active { transform:scale(.975); }
+/* Floating controls use the same restrained material, without a colored glow. */
+#dock,nav,body.driving nav {
+  background:var(--ui-glass);
+  border-color:var(--ui-edge);
+  box-shadow:var(--ui-shadow),inset 0 1px 0 rgba(255,255,255,.8);
+  backdrop-filter:blur(18px) saturate(1.05);
+  -webkit-backdrop-filter:blur(18px) saturate(1.05);
+}
+#dock button,nav button,#drive,body.driving #drive {
+  color:var(--ui-ink);
+  background:transparent;
+  border-color:transparent;
+  box-shadow:none;
+  text-shadow:none;
+  font-weight:500;
+}
+#dock button.selected,nav .selected {
+  color:#111113;
+  background:rgba(255,255,255,.95);
+  box-shadow:0 1px 4px rgba(0,0,0,.08),inset 0 0 0 1px rgba(0,0,0,.025);
+}
+#dock button:hover,nav button:hover,#drive:hover,body.driving #drive:hover {
+  color:#111113;
+  background:rgba(255,255,255,.8);
+  box-shadow:0 2px 9px rgba(0,0,0,.065);
+  transform:translateY(-1px);
+}
+#dock button:active,nav button:active,#drive:active,body.driving #drive:active { transform:scale(.975); }
+#dock>span { background:var(--ui-line); }
+svg { stroke-width:1.55; }
+#dock svg,header .icon svg,#toggleInterface svg { stroke-width:1.55;filter:none; }
+header .icon,#toggleInterface,#recoverRoad {
+  color:var(--ui-ink);
+  background:var(--ui-glass);
+  border-color:var(--ui-edge);
+  box-shadow:var(--ui-shadow),inset 0 1px 0 rgba(255,255,255,.75);
+  backdrop-filter:blur(18px) saturate(1.05);
+  -webkit-backdrop-filter:blur(18px) saturate(1.05);
+  text-shadow:none;
+  font-weight:500;
+}
+header .icon:hover,#toggleInterface:hover,#recoverRoad:hover {
+  color:#111113;
+  background:rgba(255,255,255,.9);
+  box-shadow:0 5px 18px rgba(0,0,0,.1);
+  transform:translateY(-1px);
+}
+header .icon:active,#toggleInterface:active,#recoverRoad:active { transform:scale(.975); }
+#recoverRoad b { color:#3a3a3c;background:rgba(255,255,255,.85);border-color:rgba(0,0,0,.05);box-shadow:0 1px 2px rgba(0,0,0,.035); }
+.wordmark { color:#1d1d1f;text-shadow:0 1px 0 rgba(255,255,255,.4),0 2px 8px rgba(0,0,0,.08); }
+.wordmark img { opacity:.86;filter:drop-shadow(0 1px 2px rgba(0,0,0,.1)); }
+body.inside .wordmark,body.driving .wordmark { color:#f5f5f7;text-shadow:0 2px 10px rgba(0,0,0,.25); }
+body.inside .wordmark img,body.driving .wordmark img { filter:invert(1) drop-shadow(0 1px 3px rgba(0,0,0,.18)); }
+/* Configuration surfaces: typography and material only; all spacing is retained. */
+#panel {
+  background:rgba(247,247,249,.9);
+  color:var(--ui-ink);
+  border-color:rgba(255,255,255,.8);
+  box-shadow:0 16px 45px rgba(0,0,0,.10),inset 0 1px 0 rgba(255,255,255,.8);
+  backdrop-filter:blur(20px) saturate(1.05);
+  -webkit-backdrop-filter:blur(20px) saturate(1.05);
+}
+.panel-title h1 { font-weight:600;letter-spacing:-.65px;color:#1d1d1f; }
+.panel-title button,.dialog-close { color:#86868b; }
+#tabs { border-color:var(--ui-line); }
+#tabs button { color:var(--ui-secondary);font-weight:500; }
+#tabs button.selected { color:#1d1d1f;border-bottom-color:#1d1d1f; }
+#tabs button:hover { background:transparent;box-shadow:none;color:#1d1d1f; }
+.label { color:#343437;font-weight:500;letter-spacing:-.1px; }
+.label span { color:var(--ui-secondary);font-weight:400; }
+.swatch { border-color:#fff;box-shadow:0 0 0 1px rgba(0,0,0,.12),0 2px 3px rgba(0,0,0,.04); }
+.swatch.selected { box-shadow:0 0 0 2px #3a3a3c,0 2px 5px rgba(0,0,0,.08); }
+.swatch:hover { filter:brightness(1.04); }
+.options button,.row-buttons button,.file-button {
+  color:#3a3a3c;
+  background:rgba(255,255,255,.62);
+  border-color:rgba(60,60,67,.12);
+  box-shadow:0 1px 2px rgba(0,0,0,.025);
+}
+.options button.selected { background:#fff;border-color:#8e8e93;color:#1d1d1f;box-shadow:0 1px 4px rgba(0,0,0,.055); }
+.action { background:#252527;color:#fff;box-shadow:0 2px 5px rgba(0,0,0,.10);font-weight:500; }
+.action:hover { background:#3a3a3c!important;color:#fff!important;box-shadow:0 3px 8px rgba(0,0,0,.12)!important; }
+.toggle-row { color:#48484a; }
+.toggle { background:#d1d1d6;box-shadow:inset 0 1px 2px rgba(0,0,0,.06); }
+.toggle:before { background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:transform 200ms var(--ui-ease); }
+.toggle.on,.toggle.on:hover { background:#343436!important;box-shadow:inset 0 0 0 1px rgba(0,0,0,.04)!important; }
+.toggle:not(.on):hover { background:#c3c3c8!important;box-shadow:inset 0 1px 2px rgba(0,0,0,.06)!important; }
+.range { accent-color:#48484a; }
+/* Tesla display: ceramic white, graphite bezel and grouped settings surfaces. */
+#screenDock {
+  background:#f5f5f7;
+  border-color:#1c1c1e;
+  box-shadow:0 24px 56px -10px rgba(0,0,0,.30),0 8px 18px rgba(0,0,0,.16),0 0 0 1px rgba(255,255,255,.45);
+}
+.tablet-display { background:#f5f5f7;box-shadow:inset 0 0 0 1px rgba(255,255,255,.72);color:#1d1d1f; }
+.screen-dock-title { color:#1d1d1f;font-weight:600;letter-spacing:-.15px; }
+.screen-dock-title .dialog-close { color:#86868b; }
+.display-tabs button { background:#e8e8ed;color:#6e6e73;border-color:transparent;text-shadow:none;box-shadow:none;font-weight:500; }
+.display-tabs button.selected,.display-tabs button.selected:hover { background:#fff;color:#1d1d1f;box-shadow:0 1px 4px rgba(0,0,0,.09),inset 0 0 0 1px rgba(0,0,0,.025);text-shadow:none; }
+.display-tabs button:hover { background:#eeeef1;color:#1d1d1f;box-shadow:none; }
+.vehicle-summary { background:#ededf0;border-color:rgba(0,0,0,.025);box-shadow:inset 0 1px 0 rgba(255,255,255,.7); }
+.vehicle-summary-top strong { font-weight:300;color:#1d1d1f;letter-spacing:-1px; }
+.vehicle-summary-top #vehicleUnit,.battery-level { color:#6e6e73; }
+.vehicle-summary-bottom { color:#86868b; }
+.vehicle-summary-bottom b { color:#1d1d1f;font-weight:600;letter-spacing:-.1px; }
+.vehicle-settings { background:#fff;border-color:rgba(0,0,0,.035);box-shadow:0 1px 2px rgba(0,0,0,.025); }
+.vehicle-settings summary,.vehicle-settings summary:hover { background:#fff;color:#1d1d1f;text-shadow:none;font-weight:600; }
+.vehicle-settings summary:after { color:#8e8e93; }
+#vehicleSettings .toggle-row { border-bottom:1px solid rgba(60,60,67,.065); }
+#vehicleSettings .label { color:#48484a; }
+#vehicleSettings .label span { color:#86868b;font-variant-numeric:tabular-nums; }
+#destinations button { color:#6e6e73;background:#e8e8ed;border-color:transparent;box-shadow:none; }
+#destinations button.selected { background:#fff;color:#1d1d1f;border-color:rgba(0,0,0,.08);box-shadow:0 1px 3px rgba(0,0,0,.045); }
+#navigationStatus { color:#86868b;font-variant-numeric:tabular-nums; }
+#navigationMap { background:#f1f2f4;box-shadow:inset 0 0 0 1px rgba(0,0,0,.035); }
+/* Media controls stay native and accessible; the library adopts the same row material. */
+#screenDock #mediaControls { background:transparent;color:#1d1d1f; }
+.library-heading b { color:#1d1d1f;font-weight:600;letter-spacing:-.15px; }
+.library-heading span,#mediaControls span { color:#86868b; }
+.file-button { border:1px solid rgba(0,0,0,.06);background:#fff;color:#343437;font-weight:500;transition:background-color 180ms var(--ui-ease),box-shadow 180ms var(--ui-ease); }
+.file-button:hover { background:#fafafa;box-shadow:0 2px 5px rgba(0,0,0,.06); }
+.library-player>button { background:#e8e8ed;color:#3a3a3c;box-shadow:none; }
+.library-player audio { color-scheme:light; }
+.library-player audio::-webkit-media-controls-panel { background-color:#ededf0; }
+.track-row { background:#fff;border-color:rgba(0,0,0,.025);box-shadow:0 1px 2px rgba(0,0,0,.02); }
+.track-row.active { background:#e3e3e8;border-color:rgba(0,0,0,.035); }
+.track-name { color:#343437;font-weight:400; }
+.track-play { color:#48484a; }
+.track-remove,.track-row small,.library-empty,.storage-label { color:#86868b; }
+.track-name:hover { background:transparent!important;box-shadow:none!important;color:#111113!important; }
+/* Secondary UI shares the same grayscale and typographic rhythm. */
+#speedHud { text-shadow:0 2px 12px rgba(0,0,0,.25); }
+#speedHud strong { font-weight:300;font-variant-numeric:tabular-nums; }
+#speedHud span { color:rgba(255,255,255,.82); }
+#creditsButton { color:#636366;background:rgba(245,245,247,.75);border-color:rgba(255,255,255,.7);box-shadow:0 2px 8px rgba(0,0,0,.04); }
+#toast { background:rgba(32,32,34,.91);box-shadow:0 6px 20px rgba(0,0,0,.12);color:#fff;font-family:var(--ui-font);backdrop-filter:blur(12px); }
+dialog { background:#f5f5f7;color:#1d1d1f;border-color:rgba(255,255,255,.75);box-shadow:0 24px 70px rgba(0,0,0,.23);font-family:var(--ui-font); }
+dialog::backdrop { background:rgba(0,0,0,.24);backdrop-filter:blur(8px); }
+dialog h2 { color:#1d1d1f;letter-spacing:-.5px; }
+dialog p { color:#6e6e73; }
+dialog a { color:#3a3a3c;text-decoration-color:#b7b7bd;text-underline-offset:3px; }
+#loading { background:#f5f5f7;color:#1d1d1f; }
+.loader { background:#e5e5ea; }
+.loader:after { background:#636366; }
+@media(prefers-reduced-motion:reduce) {
+  button,.toggle:before,.file-button { transition:none; }
+  #dock button:hover,nav button:hover,#drive:hover,body.driving #drive:hover,header .icon:hover,#toggleInterface:hover,#recoverRoad:hover { transform:none; }
+}
+@keyframes surface-appear {
+  from { opacity:0;transform:translateY(6px); }
+  to { opacity:1;transform:translateY(0); }
+}
+#panel:not(.closed),dialog[open] { animation:surface-appear 220ms var(--ui-ease); }
+@media(prefers-reduced-motion:reduce) { #panel:not(.closed),dialog[open] { animation:none; } }
