@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node tests/driving.test.mjs && node tests/world-physics.test.mjs && node tests/render-motion.test.mjs"
+  }
+}
